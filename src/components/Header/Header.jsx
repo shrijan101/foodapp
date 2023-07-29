@@ -45,7 +45,7 @@ const Header = () => {
   console.log(menuRef?.current?.classList.value);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
@@ -54,11 +54,14 @@ const Header = () => {
       } else {
         headerRef.current.classList.remove("header__shrink");
       }
-    });
-
-    return () => window.removeEventListener("scroll");
+    };
+  
+    // Add the event listener with the stored function reference
+    window.addEventListener("scroll", handleScroll);
+  
+    // Remove the event listener with the same function reference when the component is unmounted
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   return (
     <header className="header" ref={headerRef}>
       <Container>
