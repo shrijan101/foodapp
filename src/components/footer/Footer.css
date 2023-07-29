@@ -1,0 +1,33 @@
+html,
+body,
+.Footer {
+  height: 100%;
+}
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+}
+
+.Footer-main {
+  flex-grow: 1;
+}
+
+.Footer-footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand,
+.license {
+  color: #888;
+}
